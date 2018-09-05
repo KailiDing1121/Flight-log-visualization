@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app='demo_app' class="full-height">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flight Log Charting Version 3</title>
+    <!-- styles sheet should be here -->
+    <link rel="stylesheet" type="text/css" href="assets/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <link herf="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <!-- the original cdn include part -->
+    <!-- <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+</head>
+
+<body ng-controller="MainController" class="full-height" ng-init="init()">
+    <div class="well header" >
+        <input type="text" class="span3" id="search" data-provide="typeahead" data-items="1" />
+        <button ng-click="Toggle();" id="search">Toggle</button>
+    </div>
+    
+    <div class="container-fluid content-body">
+        <div class="row-fluid full-height">
+            <div class="col-md-3 full-height" id="TreePart">
+                Readfile:
+                <input type="file" id="fileID" onchange='angular.element(this).scope().load_file(event)'>
+                <ul id="tree" class="ztree"></ul>
+            </div>
+            <div class="col-md-9 full-height" id="ChartPart">
+                <div class="chart-header">Chart here.</div>
+                <div class="chart-body">
+                    <div id="myChart" style="height: 50%"></div>
+                    <div id="secondChart" style="height: 50%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- js files should be here -->
+    <!-- 3rd-party ones -->
+    <script type="text/javascript" src="assets/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/angular.min.js"></script>
+    <script type="text/javascript" src="assets/highcharts.js"></script>
+    <script type="text/javascript" src="assets/underscore-min.js"></script>
+    <script type="text/javascript" src="assets/jquery.ztree.all.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+    <!-- custom one -->
+    <script type="text/javascript" src="custom_js/all_in_one.js"></script>
+</body>
+
+</html>
